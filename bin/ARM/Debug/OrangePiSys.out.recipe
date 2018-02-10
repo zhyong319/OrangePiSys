@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project>
+  <LocalLibPath>D:\VS_Application\OrangePiSys\\sys-daemon</LocalLibPath>
+  <ObjPaths>D:\VS_Application\OrangePiSys\\</ObjPaths>
+  <Configuration>Debug</Configuration>
+  <Platform>ARM</Platform>
+</Project>

@@ -1,0 +1,20 @@
+﻿  Cleaning remote project directory
+  Validating architecture
+  Validating sources
+  Copying sources remotely to '192.168.3.99'
+  Starting remote build
+  Compiling sources:
+  GPIO.cpp
+  LCD.cpp
+  main.cpp
+  /vs/OrangePiSys/src/main.cpp: In function ‘void FanProg()’:
+  /vs/OrangePiSys/src/main.cpp:27:21: error: ‘writeSysLog’ was not declared in this scope
+      writeSysLog(START);
+                       ^
+  /vs/OrangePiSys/src/main.cpp:40:20: error: ‘writeSysLog’ was not declared in this scope
+      writeSysLog(STOP);
+                      ^
+  
+D:\VS_Application\OrangePiSys\OrangePiSys\src\main.cpp(27,21): error : ‘writeSysLog’ was not declared in this scope
+D:\VS_Application\OrangePiSys\OrangePiSys\src\main.cpp(40,20): error : ‘writeSysLog’ was not declared in this scope
+  sys.cpp

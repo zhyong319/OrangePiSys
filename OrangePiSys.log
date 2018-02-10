@@ -1,0 +1,12 @@
+﻿  Cleaning remote project directory
+  Validating architecture
+  Validating sources
+  Copying sources remotely to '192.168.3.99'
+  Starting remote build
+  Compiling sources:
+  GPIO.cpp
+  LCD.cpp
+  main.cpp
+  sys.cpp
+  Linking objects
+  OrangePiSys.vcxproj -> D:\VS_Application\OrangePiSys\\sys-daemon

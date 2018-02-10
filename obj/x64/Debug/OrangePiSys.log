@@ -1,0 +1,33 @@
+﻿  Validating architecture
+  Validating sources
+  Copying sources remotely to 'xrhserver.iask.in'
+  Starting remote build
+  Compiling sources:
+  GPIO.cpp
+  /home/zz/projects/OrangePiSys/GPIO.cpp:2:17: fatal error: GPIO.h: 没有那个文件或目录
+   #include<GPIO.h>
+                   ^
+  compilation terminated.
+  
+D:\VS_Application\OrangePiSys\OrangePiSys\GPIO.cpp(2,17): error : GPIO.h: 没有那个文件或目录
+  LCD.cpp
+  /home/zz/projects/OrangePiSys/LCD.cpp:3:17: fatal error: LCD.h: 没有那个文件或目录
+   #include <LCD.h>
+                   ^
+  compilation terminated.
+  
+D:\VS_Application\OrangePiSys\OrangePiSys\LCD.cpp(3,17): error : LCD.h: 没有那个文件或目录
+  main.cpp
+  /home/zz/projects/OrangePiSys/main.cpp:1:25: fatal error: CharacterLib.h: 没有那个文件或目录
+   #include<CharacterLib.h>
+                           ^
+  compilation terminated.
+  
+D:\VS_Application\OrangePiSys\OrangePiSys\main.cpp(1,25): error : CharacterLib.h: 没有那个文件或目录
+  sys.cpp
+  /home/zz/projects/OrangePiSys/sys.cpp:2:16: fatal error: sys.h: 没有那个文件或目录
+   #include<sys.h>
+                  ^
+  compilation terminated.
+  
+D:\VS_Application\OrangePiSys\OrangePiSys\sys.cpp(2,16): error : sys.h: 没有那个文件或目录
