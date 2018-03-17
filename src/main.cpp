@@ -11,6 +11,7 @@
 int LCDFD = 0; //保存液晶文件句柄
 int temp0 = 0; //保存ZONE0温度值
 int temp1 = 0; //保存ZONE1温度值
+int averageValue = 0; //保存CPU温度的平均值
 int bootTimeNow = 0; //保存系统启动到现在的时间
 int fanStatus =1; //初始变量	
 double x, y; //保存CPU负载值
@@ -18,32 +19,19 @@ int tmp, num1[2], num2[2]; //分别存储CPU负载的整数值（DOUBLE类型分
 
 void FanProg(void)
 {
+	
+	
 	temp0 = GetZoneTemp(ZONE0);
 	temp1 = GetZoneTemp(ZONE1);
-	if (((temp0 >= TEMP_H) || (temp1 >= TEMP_H)) && fanStatus)
-	{
-		sleep(1);
-		if (((temp0 >= TEMP_H) || (temp1 >= TEMP_H)) && fanStatus)
-		{
-			fanStatus = 0;
-			FanControl(START); //start fan
-			printf("	Fan Status: Running...\n");
-			WriteSysLog(START);
+	averageValue = (temp0 + temp1) / 2;
+	if (averageValue <= 40) return; // CPU温度低于35度，风扇停止工作
+	int pwmInt = (averageValue - 35) * 10; //让PWM值在10——150之间，对应的温度为35——50度之间
+	if (pwmInt > 100) pwmInt = 100;
+	FanControl(pwmInt);
+	
+	printf("Fan PWM = %d\n",pwmInt);
+    //WriteSysLog(START);
 
-		}
-	}
-
-	if (((temp0 <= TEMP_L) || (temp1 <= TEMP_L)) && (!fanStatus))
-	{
-		sleep(1);
-		if (((temp0 <= TEMP_L) || (temp1 <= TEMP_L)) && (!fanStatus))
-		{
-			fanStatus = 1;
-			FanControl(STOP);//stop fan
-			printf("	Fan Status: STOP!\n");
-			WriteSysLog(STOP);
-		}
-	}
 }
 
 void DisplayInfo(int fd)
@@ -125,7 +113,7 @@ int main(void)
 
 		FanProg();
 		DisplayInfo(LCDFD);
-		sleep(1);
+		sleep(2);
 	}
 	printf("The SYS mornitor is stop !\n");
 	return 0;

@@ -76,7 +76,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">
     <TargetName>sys-daemon</TargetName>
     <TargetExt />
-    <IncludePath>D:\VS_Application\OrangePiSys\src;D:\VS_Application\OrangePiSys\inc;D:\VS_Application\OrangePiSys\OrangePiSys\inc;D:\VS_Application\OrangePiSys\OrangePiSys\src;F:\g++\ARM\local\include;F:\g++\ARM\include;/vs/OrangePiSys/inc;/vs/OrangePiSys/src;$(IncludePath)</IncludePath>
+    <IncludePath>D:\VS_Application\OrangePiSys\src;D:\VS_Application\OrangePiSys\inc;D:\VS_Application\OrangePiSys\OrangePiSys\inc;D:\VS_Application\OrangePiSys\OrangePiSys\src;G:\g++\ARM\local\include;G:\g++\ARM\include;/vs/OrangePiSys/inc;/vs/OrangePiSys/src;$(IncludePath)</IncludePath>
     <SourcePath>
     </SourcePath>
     <RemoteProjectDir>/vs/OrangePiSys</RemoteProjectDir>

@@ -3,6 +3,7 @@
 #define _GPIO_H
 
 #include<wiringPi.h>
+#include<softPwm.h>
 #include<unistd.h>
 
 
@@ -31,7 +32,7 @@ extern void FanCheckSelf(void);
 /**********功能描述：风扇启停控制***/
 /**********参数：start =1 stop =0********************************/
 /**********返回值：无********************************/
-extern void FanControl(int sta);
+extern void FanControl(int pwmValue);
 
 
 #endif
