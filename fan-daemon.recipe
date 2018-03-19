@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project>
+  <LocalLibPath>D:\git\OrangePiSys\\fan-daemon</LocalLibPath>
+  <ObjPaths>D:\git\OrangePiSys\\</ObjPaths>
+  <Configuration>Debug</Configuration>
+  <Platform>ARM</Platform>
+</Project>

@@ -13,7 +13,8 @@
 #define TEMP_L   40
 
 
-
+#define PWM_PIN 16
+#define PWM_MAX_VALUE 100
 
 /**********功能描述：GPIO 16 初始化设置为输出 ***/
 /**********参数：无**/

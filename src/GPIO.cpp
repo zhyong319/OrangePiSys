@@ -7,7 +7,7 @@
 void Init_Pin(void)
 {
 	wiringPiSetup();
-	softPwmCreate(16, 0, 150);
+	softPwmCreate(PWM_PIN, 0, PWM_MAX_VALUE);
 
 }
 
@@ -18,7 +18,7 @@ void Init_Pin(void)
 /**********返回值：无********************************/
 void FanCheckSelf(void)
 {	
-		softPwmWrite(16, 30);
+		softPwmWrite(PWM_PIN, 30);
 		sleep(5);
 }
 
@@ -29,6 +29,6 @@ void FanCheckSelf(void)
 /**********返回值：无********************************/
 void FanControl(int pwmmValue)
 {
-	softPwmWrite(16, pwmmValue);
+	softPwmWrite(PWM_PIN, pwmmValue);
 }
 

@@ -17,16 +17,23 @@ int fanStatus =1; //初始变量
 double x, y; //保存CPU负载值
 int tmp, num1[2], num2[2]; //分别存储CPU负载的整数值（DOUBLE类型分位存储）
 
+
+#define WARN_TEMPRETURE 35
+#define FAN_START_WORK_TEMPRETURE 40
+
+
 void FanProg(void)
 {
-	
-	
 	temp0 = GetZoneTemp(ZONE0);
 	temp1 = GetZoneTemp(ZONE1);
 	averageValue = (temp0 + temp1) / 2;
-	if (averageValue <= 40) return; // CPU温度低于35度，风扇停止工作
-	int pwmInt = (averageValue - 35) * 10; //让PWM值在10——150之间，对应的温度为35——50度之间
-	if (pwmInt > 100) pwmInt = 100;
+	if (averageValue < FAN_START_WORK_TEMPRETURE)
+	{
+		FanControl(0);
+		return; // CPU温度低于35度，风扇停止工作
+	}
+	int pwmInt = (averageValue - WARN_TEMPRETURE) * 5; //让PWM值在0——100之间，对应的温度为35——55度之间
+	if (pwmInt > PWM_MAX_VALUE) pwmInt = PWM_MAX_VALUE;
 	FanControl(pwmInt);
 	
 	printf("Fan PWM = %d\n",pwmInt);
@@ -104,6 +111,7 @@ int main(void)
 	LCDFD = GetLCDFD();//猎取液晶操作句柄
 	OLED_Init(LCDFD);//初始化液晶
 	LCDCheckSelf(LCDFD);
+
 	Draw_BMP(LCDFD, 0, 0, 127, 7, ubuntu);
 	sleep(1);
 	FanCheckSelf(); //风扇自检
@@ -113,7 +121,7 @@ int main(void)
 
 		FanProg();
 		DisplayInfo(LCDFD);
-		sleep(2);
+		sleep(5);
 	}
 	printf("The SYS mornitor is stop !\n");
 	return 0;

@@ -1,1 +1,1 @@
-g++ -o "/vs/OrangePiSys/sys-daemon" -Wl,--no-undefined -Wl,-z,relro -Wl,-z,now -Wl,-z,noexecstack /vs/OrangePiSys/GPIO.o /vs/OrangePiSys/LCD.o /vs/OrangePiSys/main.o /vs/OrangePiSys/sys.o -lwiringPi -lpthread
+g++ -o "/vs/OrangePiSys/fan-daemon" -Wl,--no-undefined -Wl,-z,relro -Wl,-z,now -Wl,-z,noexecstack /vs/OrangePiSys/GPIO.o /vs/OrangePiSys/LCD.o /vs/OrangePiSys/main.o /vs/OrangePiSys/sys.o -lwiringPi -lpthread

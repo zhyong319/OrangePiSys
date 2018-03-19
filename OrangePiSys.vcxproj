@@ -74,7 +74,7 @@
   <ImportGroup Label="PropertySheets" />
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">
-    <TargetName>sys-daemon</TargetName>
+    <TargetName>fan-daemon</TargetName>
     <TargetExt />
     <IncludePath>D:\VS_Application\OrangePiSys\src;D:\VS_Application\OrangePiSys\inc;D:\VS_Application\OrangePiSys\OrangePiSys\inc;D:\VS_Application\OrangePiSys\OrangePiSys\src;G:\g++\ARM\local\include;G:\g++\ARM\include;/vs/OrangePiSys/inc;/vs/OrangePiSys/src;$(IncludePath)</IncludePath>
     <SourcePath>
